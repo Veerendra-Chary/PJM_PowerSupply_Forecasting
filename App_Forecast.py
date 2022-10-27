@@ -11,8 +11,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings("ignore")
-import plotly.express as px
-
 
 
 model1 = pickle.load(open(r'C:\Users\cchar\Power supply Forecasting Project/Forecast_random_forest.pkl',"rb"))
@@ -46,10 +44,9 @@ st.sidebar.write(future_df[-1:])
 
 st.write(f"Power consumptionForecasted till {days}" )
 st.write(future_df)
-
 st.subheader('Actual and Forecast plot')
 fig=plt.figure(figsize=(12,6))
-px.line(data[-365:].index,data[-365:].values)
+plt.plot(data[-365:].index,data[-365:].values)
 plt.plot(future_df.index,future_df.values)
 plt.xlabel('Year',fontsize=14)
 plt.ylabel('Power consumption',fontsize=14)
