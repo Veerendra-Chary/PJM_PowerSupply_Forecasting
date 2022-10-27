@@ -13,9 +13,9 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-model1 = pickle.load(open(r'C:\Users\cchar\Power supply Forecasting Project/Forecast_random_forest.pkl',"rb"))
-daily_data_last_7=pd.read_csv(r'C:\Users\cchar\Power supply Forecasting Project/daily_data_last_7.csv', header=None)
-data=pd.read_csv(r"C:\Users\cchar\Power supply Forecasting Project/future_df.csv",header=0, index_col=0, parse_dates=True)
+model1 = pickle.load(open('./Forecast_random_forest.pkl',"rb"))
+daily_data_last_7=pd.read_csv('./daily_data_last_7.csv', header=None)
+data=pd.read_csv("./future_df.csv",header=0, index_col=0, parse_dates=True)
 
 
 
